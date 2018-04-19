@@ -1,0 +1,22 @@
+<h1>Welcome#Subjects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Room</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @subjects.each do |subject| %>
+      <tr>
+        <td><%= link_to subject.name, subject %></td>
+        <td><%= subject.date %></td>
+        <td><%= subject.room %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
