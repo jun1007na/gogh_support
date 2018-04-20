@@ -6,6 +6,7 @@ class WelcomeController < ApplicationController
     @thu_subjects = Subject.where(week: 4).order('time')
     @fri_subjects = Subject.where(week: 5).order('time')
     
+    @today_subjects = Subject.where(week: Time.zone.now.wday).order('time')
   end
 
   def about

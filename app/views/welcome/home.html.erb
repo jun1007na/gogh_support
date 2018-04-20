@@ -1,4 +1,17 @@
 <h1>Welcome</h1>
+<h2>Today</h2>
+<table>
+  <tbody>
+    <% @today_subjects.each do |subject| %>
+      <tr>
+        <td><%= link_to subject.name, subject %></td>
+        <td><%= subject.date %></td>
+        <td><%= subject.room %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <h2>Timetable</h2>
 <table>
   <h3>Monday</h3>
