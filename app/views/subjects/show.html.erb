@@ -15,15 +15,17 @@
   <%= @subject.room %>
 </p>
 
-<p>
-  <strong>Syllabus:</strong>
-  <%= link_to 'URL Link', @subject.syllabus %>
-</p>
+<% if @subject.syllabus.start_with?("https://") %>
+  <p>
+    <strong>Syllabus:</strong>
+    <%= link_to @subject.syllabus[0..30]+'...', @subject.syllabus %>
+  </p>
+<% end %>
 
-<% if @subject.weblink != 'なし' %>
+<% if @subject.weblink.start_with?("http://") %>
   <p>
     <strong>Weblink:</strong>
-    <%= link_to 'URL Link', @subject.weblink %>
+    <%= link_to @subject.weblink[0..30]+'...', @subject.weblink %>
   </p>
 <% end %>
 
