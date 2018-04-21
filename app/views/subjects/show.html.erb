@@ -1,33 +1,34 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @subject.name %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @subject.date %>
-</p>
-
-<p>
-  <strong>Room:</strong>
-  <%= @subject.room %>
-</p>
-
-<% if @subject.syllabus.start_with?("https://") %>
+<div class="pt-3 pb-3">
+  <h3><%= @subject.name %></h3>
+  <hr>
   <p>
-    <strong>Syllabus:</strong>
-    <%= link_to @subject.syllabus[0..30]+'...', @subject.syllabus %>
+    <strong>Date:</strong>
+    <%= @subject.date %>
   </p>
-<% end %>
 
-<% if @subject.weblink.start_with?("http://") %>
   <p>
-    <strong>Weblink:</strong>
-    <%= link_to @subject.weblink[0..30]+'...', @subject.weblink %>
+    <strong>Room:</strong>
+    <%= @subject.room %>
   </p>
-<% end %>
+</div>
 
+<div class="pt-3 pb-3">
+  <h4>関連リンク</h4>
+  <hr>
+
+  <% if @subject.syllabus.start_with?("https://") %>
+    <p>
+      <strong>Syllabus:</strong>
+      <%= link_to @subject.syllabus[0..30]+'...', @subject.syllabus %>
+    </p>
+  <% end %>
+
+  <% if @subject.weblink.start_with?("http://") %>
+    <p>
+      <strong>Weblink:</strong>
+      <%= link_to @subject.weblink[0..30]+'...', @subject.weblink %>
+    </p>
+  <% end %>
+</div>
 
 <%= link_to 'Back', root_path %>

@@ -9,6 +9,26 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-expand navbar-dark" style="background-color: #c7000a;">
+      <%= link_to 'Gogh Sup', root_path, class: "navbar-brand"%>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <%= link_to 'Home <span class="sr-only">(current)</span>'.html_safe, root_path, class: "nav-link"%>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Moodle', 'https://lms.imc.tut.ac.jp/', class: "nav-link"%>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -1,79 +1,97 @@
-<h1>Welcome</h1>
-<h2>Today</h2>
-<table>
-  <tbody>
-    <% @today_subjects.each do |subject| %>
-      <tr>
-        <td><%= link_to subject.name, subject %></td>
-        <td><%= subject.date %></td>
-        <td><%= subject.room %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="pt-3">
+  <h1>Welcome</h1>
+</div>
+<div class="pt-3 pb-3">
+  <h2>Today</h2>
+  <% if @today_subjects.blank? %>
+    <div class="alert alert-info p-3" role="alert">
+      <h4 class="alert-heading">そうだ、今日は休もう。</h4>
+      <p>まあどう過ごすかは人それぞれだけど、楽しく過ごしたいよね。</p>
+      <hr>
+      <div class="text-right">
+        <%= link_to '<button type="button" class="btn btn-info">Twitter</button>'.html_safe, 'https://twitter.com/?lang=ja' %>
+        <%= link_to '<button type="button" class="btn btn-outline-info">YouTube</button>'.html_safe, 'https://www.youtube.com/' %>
+      </div>
+    </div>
+  <% else %>
+    <table class="table table-striped">
+      <tbody>
+        <% @today_subjects.each do |subject| %>
+          <tr>
+            <td><%= link_to subject.name, subject %></td>
+            <td><%= subject.date %></td>
+            <td><%= subject.room %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>
 
-<h2>Timetable</h2>
-<table>
-  <h3>Monday</h3>
-  <tbody>
-    <% @mon_subjects.each do |subject| %>
-      <tr>
-        <td><%= link_to subject.name, subject %></td>
-        <td><%= subject.date %></td>
-        <td><%= subject.room %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="pt-3 pb-3">
+  <h2>Timetable</h2>
+  <table class="table table-striped">
+    <h3>Monday</h3>
+    <tbody>
+      <% @mon_subjects.each do |subject| %>
+        <tr>
+          <td><%= link_to subject.name, subject %></td>
+          <td><%= subject.date %></td>
+          <td><%= subject.room %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<table>
-  <h3>Tuesday</h3>
-  <tbody>
-    <% @tue_subjects.each do |subject| %>
-      <tr>
-        <td><%= link_to subject.name, subject %></td>
-        <td><%= subject.date %></td>
-        <td><%= subject.room %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <table class="table table-striped">
+    <h3>Tuesday</h3>
+    <tbody>
+      <% @tue_subjects.each do |subject| %>
+        <tr>
+          <td><%= link_to subject.name, subject %></td>
+          <td><%= subject.date %></td>
+          <td><%= subject.room %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<table>
-  <h3>Wednesday</h3>
-  <tbody>
-    <% @wed_subjects.each do |subject| %>
-      <tr>
-        <td><%= link_to subject.name, subject %></td>
-        <td><%= subject.date %></td>
-        <td><%= subject.room %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <table class="table table-striped">
+    <h3>Wednesday</h3>
+    <tbody>
+      <% @wed_subjects.each do |subject| %>
+        <tr>
+          <td><%= link_to subject.name, subject %></td>
+          <td><%= subject.date %></td>
+          <td><%= subject.room %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<table>
-  <h3>Thursday</h3>
-  <tbody>
-    <% @thu_subjects.each do |subject| %>
-      <tr>
-        <td><%= link_to subject.name, subject %></td>
-        <td><%= subject.date %></td>
-        <td><%= subject.room %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <table class="table table-striped">
+    <h3>Thursday</h3>
+    <tbody>
+      <% @thu_subjects.each do |subject| %>
+        <tr>
+          <td><%= link_to subject.name, subject %></td>
+          <td><%= subject.date %></td>
+          <td><%= subject.room %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<table>
-  <h3>Friday</h3>
-  <tbody>
-    <% @fri_subjects.each do |subject| %>
-      <tr>
-        <td><%= link_to subject.name, subject %></td>
-        <td><%= subject.date %></td>
-        <td><%= subject.room %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <table class="table table-striped">
+    <h3>Friday</h3>
+    <tbody>
+      <% @fri_subjects.each do |subject| %>
+        <tr>
+          <td><%= link_to subject.name, subject %></td>
+          <td><%= subject.date %></td>
+          <td><%= subject.room %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
