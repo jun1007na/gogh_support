@@ -33,6 +33,8 @@ gem 'bootstrap', '~> 4.1'
 # Use jQuery
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 
+gem 'rails_real_favicon', '~> 0.0.11'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
