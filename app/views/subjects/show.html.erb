@@ -23,7 +23,7 @@
     </p>
   <% end %>
 
-  <% if @subject.weblink.start_with?("http://") %>
+  <% if @subject.weblink.start_with?("http") %>
     <p>
       <strong>Weblink:</strong>
       <%= link_to @subject.weblink[0..30]+'...', @subject.weblink %>
